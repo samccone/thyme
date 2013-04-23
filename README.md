@@ -1,17 +1,18 @@
 # Radical
-a lightweight and minimal calendar renderer
+a lightweight, minimal, and present-focused calendar renderer
 
 API
 ---
 
 ```js
-  myCalendar = new Radical('#calendar');
+  // renders a new calendar initialized at the current month
+  myCalendar = new Radical(document.getElementById('#cal'));
 
   // jump to and render next/prev month
   myCalendar.nextMonth();
   myCalendar.prevMonth();
 
-  // gets a specific day's dom node
+  // gets a specific day's dom node (in the current month)
   myCalendar.getDay('11'); // returns dom element
 
   // get's the currently displayed month and year

@@ -5,9 +5,7 @@ API
 ---
 
 ```js
-  myCalendar = new Radical({
-    container: containerNode
-  });
+  myCalendar = new Radical('#calendar');
 
   // jump to and render next/prev month
   myCalendar.nextMonth();

@@ -1,4 +1,4 @@
 before_script:
-  coffee -c radical.coffee
+  ./node_modules/coffee-script/bin/coffee -c radical.coffee
 node_js:
  - "0.8"

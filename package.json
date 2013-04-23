@@ -9,9 +9,11 @@
   "scripts": {
     "test": "mocha test"
   },
+  "dependencies": {
+    "moment": "2.0.0"
+  },
   "devDependencies": {
     "mocha": "1.9.0",
-    "moment": "2.0.0",
     "coffee-script": "latest"
   },
   "repository": {

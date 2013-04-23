@@ -14,3 +14,15 @@ describe("creation", function() {
     }
   });
 });
+
+describe("rendered month", function() {
+  it("should return current match current month/year", function() {
+    var tmp = new radical("this is a dom node");
+    var renderedMonth = tmp.renderedMonth();
+
+    assert.deepEqual(renderedMonth, {
+      month: (new Date).getMonth(),
+      year: (new Date).getFullYear()
+    });
+  });
+});

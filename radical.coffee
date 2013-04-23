@@ -18,15 +18,14 @@ class Radical
 
   nextMonth: () ->
     @currentDate = @currentDate.add 'months', 1
-    # call @render
+    @render()
 
   prevMonth: () ->
     @currentDate = @currentDate.subtract 'months', 1
-    # call @render
+    @render()
 
   render: (date) ->
-    # if (date)
-      # do something
+    date ?= @currentDate
     # render into @node
 
 if typeof module != "undefined"

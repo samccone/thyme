@@ -1,6 +1,6 @@
 before_install:
   - npm install coffee-script
 before_script:
-  ./node_modules/coffee-script/bin/coffee -c radical.coffee
+  - npm run-script compile
 node_js:
  - "0.8"

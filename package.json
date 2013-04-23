@@ -7,7 +7,8 @@
     "test": "test"
   },
   "scripts": {
-    "test": "mocha test"
+    "test": "mocha test",
+    "compile": "./node_modules/coffee-script/bin/coffee -c radical.coffee"
   },
   "dependencies": {
     "moment": "2.0.0"

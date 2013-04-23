@@ -1,7 +1,8 @@
 # Radical
-### a less crappy calendar renderer
+a lightweight and minimal calendar renderer
 
-#### API
+API
+---
 
 ```js
   myCalendar = new Radical({
@@ -13,12 +14,11 @@
   myCalendar.prevMonth();
 
   // gets a specific day's dom node
-  myCalendar.getDay('11'); // dom element
+  myCalendar.getDay('11'); // returns dom element
 
   // get's the currently displayed month and year
-  myCalendar.getRenderedMonth(); // returns { month: 5, year: 2013 }
+  myCalendar.renderedMonth(); // returns { month: 5, year: 2013 }
 
   // jump and render the containing dates month
-  myCalendar.render(date); //Moment.js valid date object
-
+  myCalendar.render(date); // accepts moment.js valid date object
 ```

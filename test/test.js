@@ -1,4 +1,5 @@
 radical = require("../radical");
+moment  = require("moment");
 assert  = require("assert");
 
 describe("creation", function() {

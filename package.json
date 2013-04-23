@@ -1,0 +1,25 @@
+{
+  "name": "radical",
+  "version": "0.0.1",
+  "description": "a lightweight, minimal, and present-focused calendar renderer",
+  "main": "radical.js",
+  "directories": {
+    "test": "test"
+  },
+  "scripts": {
+    "test": "mocha test"
+  },
+  "devDependencies": {
+    "mocha": "1.9.0",
+    "moment": "2.0.0",
+    "coffee-script": "latest"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/samccone/radical.git"
+  },
+  "author": "",
+  "license": "BSD",
+  "readmeFilename": "README.md",
+  "gitHead": "eacc48d2f011b3390faff01aa05ff4ce98ba1c83"
+}

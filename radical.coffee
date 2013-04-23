@@ -4,23 +4,24 @@ class Radical
       throw "you must pass a dom node"
 
     @node        = node
-    @currentDate = (new Date)
+    @currentDate = moment(new Date)
 
     @render()
 
   getDay: () ->
-    # not sure how you want to handle this @jeff
+    # loop through current month's days
+    # until we get a text match...?
 
   renderedMonth: () ->
     month: @currentDate.getMonth()
     year: @currentDate.getFullYear()
 
   nextMonth: () ->
-    # add a month to currentDate
+    @currentDate = @currentDate.add 'months', 1
     # call @render
 
   prevMonth: () ->
-    # remove a month to currentDate
+    @currentDate = @currentDate.subtract 'months', 1
     # call @render
 
   render: (date) ->

@@ -16,16 +16,16 @@ class Radical
     month: @currentDate.month()
     year: @currentDate.year()
 
-  nextMonth: () ->
-    @currentDate = @currentDate.add 'months', 1
-    @render()
+  nextMonth: () -> 
+    @render(@currentDate.add('months', 1))
 
   prevMonth: () ->
-    @currentDate = @currentDate.subtract 'months', 1
-    @render()
+    @render(@currentDate.subtract('months', 1))
 
   render: (date) ->
-    date ?= @currentDate
+    if date
+      @currentDate = if typeof date == 'string' then moment(date) else date
+    @currentDate
     # render into @node
 
 if typeof module != "undefined"

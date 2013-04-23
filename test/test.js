@@ -40,4 +40,9 @@ describe('month traversal', function(){
     assert.equal(tmp.currentDate.month() - 1, tmp.prevMonth().month())
   });
 
+  it('should render any month passed', function(){
+    var tmp = new Radical("node");
+    assert.equal(tmp.render('2013-7-9').month(), 6)
+  });
+
 });

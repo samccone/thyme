@@ -1,6 +1,8 @@
 # Radical
 a lightweight, minimal, and present-focused calendar renderer
 
+[![Build Status](https://travis-ci.org/samccone/radical.png)](https://travis-ci.org/samccone/radical)
+
 API
 ---
 

@@ -13,8 +13,8 @@ class Radical
     # until we get a text match...?
 
   renderedMonth: () ->
-    month: @currentDate.getMonth()
-    year: @currentDate.getFullYear()
+    month: @currentDate.month()
+    year: @currentDate.year()
 
   nextMonth: () ->
     @currentDate = @currentDate.add 'months', 1

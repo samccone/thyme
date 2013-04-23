@@ -21,3 +21,10 @@ API
   // jump and render the containing dates month
   myCalendar.render(date); // accepts moment.js valid date object
 ```
+
+
+#### TESTING
+
+`$ npm install mocha `
+
+`$ mocha test `

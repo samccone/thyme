@@ -7,7 +7,7 @@
     "test": "test"
   },
   "scripts": {
-    "test": "mocha test --globals myCal",
+    "test": "mocha test --globals myCal -R spec",
     "compile": "./node_modules/coffee-script/bin/coffee -c radical.coffee"
   },
   "dependencies": {

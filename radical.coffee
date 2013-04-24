@@ -34,7 +34,8 @@ class Radical
 
       for day in [0 ... 7]
         cell = document.createElement "td"
-        cell.innerHTML = days.pop()
+        current_day = days.shift()
+        cell.innerHTML =  current_day if current_day
         row.appendChild(cell)
 
       table.appendChild(row)

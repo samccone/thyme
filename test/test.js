@@ -1,9 +1,10 @@
-Radical       = require("../radical");
-assert        = require("assert");
-moment        = require("moment");
-jsdom         = require("jsdom").jsdom;
-document      = jsdom("<html><head></head><body><div id='hold'></div></body></html>");
-window        = document.createWindow();
+Radical       = require("../radical"),
+assert        = require("assert"),
+fs            = require("fs"),
+path          = require("path"),
+moment        = require("moment"),
+jsdom         = require("jsdom").jsdom,
+document      = jsdom(fs.readFileSync(path.join(__dirname, 'test.html')));
 
 beforeEach(function() {
   myCal = new Radical(document.getElementById("hold"));

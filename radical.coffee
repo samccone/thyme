@@ -57,7 +57,14 @@ class Radical
 
     days = [1 ... @currentDate.daysInMonth() + 1]
 
-    for week in [0 ... @currentDate.daysInMonth() + 1] by 7
+    # The current issue is here - it doesn't render enough table
+    # rows if the start day offset pushes it into one more row than the
+    # number straight up divided by 7 requires.
+
+    # By adding 6 here i guarantee that it's never wrong, but also
+    # add an extra <tr> sometimes, which we can't have. Either way, this
+    # is where the problem is, we'll figure it out tomorrow!
+    for week in [1 ... @currentDate.daysInMonth() + 6] by 7
       row = document.createElement "tr"
 
       for day in [0 ... 7]

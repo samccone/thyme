@@ -36,7 +36,6 @@ describe("rendered month", function() {
 
 // months are 0 indexed
 describe('month traversal', function(){
-
   it('should return correct next month', function(){
     assert.equal(myCal.currentDate.month() + 1, myCal.nextMonth().currentDate.month())
   });
@@ -48,5 +47,4 @@ describe('month traversal', function(){
   it('should render any month passed', function(){
     assert.equal(myCal.render('2013-7-9').currentDate.month(), 6)
   });
-
 });

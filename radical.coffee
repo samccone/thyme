@@ -31,11 +31,11 @@ class Radical
     # month header
     #
 
-    month_header = document.createElement('th')
-    month_header.setAttribute 'colspan', "7"
-    month_header.innerHTML = @currentDate.format("MMMM")
+    monthHeader = document.createElement('th')
+    monthHeader.setAttribute 'colspan', "7"
+    monthHeader.innerHTML = @currentDate.format("MMMM")
     row1 = document.createElement('tr')
-    row1.appendChild(month_header)
+    row1.appendChild(monthHeader)
     table.appendChild(row1)
 
     #
@@ -45,9 +45,9 @@ class Radical
     row2 = document.createElement('tr')
 
     for dow in ['Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat', 'Sun']
-      dow_header = document.createElement('th')
-      dow_header.innerHTML = dow
-      row2.appendChild(dow_header)
+      dowHeader = document.createElement('th')
+      dowHeader.innerHTML = dow
+      row2.appendChild(dowHeader)
 
     table.appendChild(row2)
 

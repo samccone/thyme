@@ -27,19 +27,21 @@ class Radical
       @currentDate = if typeof date == 'string' then moment(date) else date
 
     table = document.createElement "table"
-    table.setAttribute("border", "1px")
+    days = [0 ... @currentDate.daysInMonth()]
 
-    for i in [0 ... 10]
-      workingRow = document.createElement "tr"
-      for j in [0 ... 5]
-        workingDay = document.createElement "td"
-        workingDay.innerHTML = j
-        workingRow.appendChild workingDay
-      table.appendChild workingRow
+    for week in [0 ... @currentDate.daysInMonth()/7]
+      row = document.createElement "tr"
+
+      for day in [0 ... 7]
+        cell = document.createElement "td"
+        cell.innerHTML = days.pop()
+        row.appendChild(cell)
+
+      table.appendChild(row)
 
     @node.innerHTML = ""
-    @node.appendChild table
-    @
+    @node.appendChild(table)
+    return this
 
 if typeof module != "undefined"
   module.exports = Radical

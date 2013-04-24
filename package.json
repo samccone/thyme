@@ -16,7 +16,8 @@
   "devDependencies": {
     "mocha": "1.9.0",
     "coffee-script": "latest",
-    "jsdom": "0.6.0"
+    "jsdom": "0.6.0",
+    "should": "latest"
   },
   "repository": {
     "type": "git",

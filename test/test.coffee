@@ -1,14 +1,13 @@
-g          = global
-g.Radical  = require("../radical")
-g.assert   = require("assert")
-g.fs       = require("fs")
-g.path     = require("path")
-g.moment   = require("moment")
-g.jsdom    = require("jsdom").jsdom
-g.document = jsdom(fs.readFileSync(path.join(__dirname, 'test.html')))
+should   = require("should")
+fs       = require("fs")
+path     = require("path")
+jsdom    = require("jsdom").jsdom
+global.Radical  = require("../radical")
+global.document = jsdom(fs.readFileSync(path.join(__dirname, 'test.html')))
+global.moment   = require("moment")
 
 beforeEach ->
-  g.myCal = new Radical document.getElementById("hold")
+  global.myCal = new Radical document.getElementById("hold")
 
 describe "creation", ->
 
@@ -25,18 +24,20 @@ describe "rendered month", ->
   it "should return current match current month/year", ->
     renderedMonth = myCal.renderedMonth()
 
-    assert.deepEqual renderedMonth,
-      month: (new Date).getMonth(),
-      year: (new Date).getFullYear()
+    renderedMonth.should.eql { month: (new Date).getMonth(), year: (new Date).getFullYear() }
 
  # months are 0 indexed
 describe 'month traversal', ->
 
   it 'should return correct next month', ->
-    assert.equal(myCal.currentDate.month() + 1, myCal.nextMonth().currentDate.month())
+    current_month = myCal.currentDate.month()
+    next_month = myCal.nextMonth().currentDate.month()
+    next_month.should.equal current_month + 1
 
   it 'should return correct previous month', ->
-    assert.equal(myCal.currentDate.month() - 1, myCal.prevMonth().currentDate.month())
+    current_month = myCal.currentDate.month()
+    previous_month = myCal.prevMonth().currentDate.month()
+    previous_month.should.equal current_month - 1
 
   it 'should render any month passed', ->
-    assert.equal(myCal.render('2013-7-9').currentDate.month(), 6)
+    myCal.render('2013-7-9').currentDate.month().should.equal 6

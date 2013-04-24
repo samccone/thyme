@@ -27,15 +27,15 @@ class Radical
       @currentDate = if typeof date == 'string' then moment(date) else date
 
     table = document.createElement "table"
-    days = [0 ... @currentDate.daysInMonth()]
+    days = [1 ... @currentDate.daysInMonth()]
 
     for week in [0 ... @currentDate.daysInMonth()/7]
       row = document.createElement "tr"
 
       for day in [0 ... 7]
         cell = document.createElement "td"
-        current_day = days.shift()
-        cell.innerHTML =  current_day if current_day
+        day_of_week = moment("#{@currentDate.year()}-#{@currentDate.month()}-#{days[0]}").day()
+        cell.innerHTML = days.shift() if day_of_week == day
         row.appendChild(cell)
 
       table.appendChild(row)

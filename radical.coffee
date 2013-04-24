@@ -17,15 +17,14 @@ class Radical
     year: @currentDate.year()
 
   nextMonth: () ->
-    @render(@currentDate.add('months', 1))
+    @currentDate = @currentDate.add('months', 1)
+    @render()
 
   prevMonth: () ->
-    @render(@currentDate.subtract('months', 1))
+    @currentDate = @currentDate.subtract('months', 1)
+    @render()
 
-  render: (date) ->
-    if date
-      @currentDate = if typeof date == 'string' then moment(date) else date
-
+  render: ->
     table = document.createElement "table"
     days = [1 ... @currentDate.daysInMonth() + 1]
 

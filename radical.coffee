@@ -27,7 +27,7 @@ class Radical
       @currentDate = if typeof date == 'string' then moment(date) else date
 
     table = document.createElement "table"
-    days = [1 ... @currentDate.daysInMonth()]
+    days = [1 ... @currentDate.daysInMonth() + 1]
 
     for week in [0 ... @currentDate.daysInMonth()/7]
       row = document.createElement "tr"

@@ -69,8 +69,8 @@ class Radical
 
       for day in [0 ... 7]
         cell = document.createElement "td"
-        day_of_week = moment("#{@currentDate.year()}-#{@currentDate.month()+1}-#{days[0]}").day()
-        cell.innerHTML = days.shift() if day_of_week == day
+        dayOfWeek = moment("#{@currentDate.year()}-#{@currentDate.month()+1}-#{days[0]}").day()
+        cell.innerHTML = days.shift() if dayOfWeek == day
         row.appendChild(cell)
 
       table.appendChild(row)

@@ -28,6 +28,5 @@ API
 
 #### TESTING
 
-`$ npm install mocha `
-
+`$ npm install mocha `    
 `$ mocha test `

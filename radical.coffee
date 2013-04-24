@@ -31,7 +31,7 @@ class Radical
     header.setAttribute 'colspan', "7"
     header.innerHTML = @currentDate.format("MMMM")
     table.appendChild(header)
-    
+
     days = [1 ... @currentDate.daysInMonth() + 1]
 
     console.log @currentDate.format("MMMM")

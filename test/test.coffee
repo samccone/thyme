@@ -2,7 +2,7 @@ should   = require("should")
 fs       = require("fs")
 path     = require("path")
 jsdom    = require("jsdom").jsdom
-global.Radical  = require("../radical")
+Radical  = require("../radical")
 global.document = jsdom(fs.readFileSync(path.join(__dirname, 'test.html')))
 global.moment   = require("moment")
 

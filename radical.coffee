@@ -28,7 +28,7 @@ class Radical
     table = document.createElement "table"
     days = [1 ... @currentDate.daysInMonth() + 1]
 
-    for week in [0 ... @currentDate.daysInMonth()/7]
+    for week in [0 ... @currentDate.daysInMonth()] by 7
       row = document.createElement "tr"
 
       for day in [0 ... 7]

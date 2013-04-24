@@ -81,7 +81,7 @@ class Radical
 
     @node.innerHTML = ""
     @node.appendChild(table)
-    return this
+    @
 
 if typeof module != "undefined"
   module.exports = Radical

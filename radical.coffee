@@ -55,13 +55,17 @@ class Radical
     # days in the month
     #
 
+    days = [1 ... @currentDate.daysInMonth() + 1]
+
     for week in [0 ... @currentDate.daysInMonth()] by 7
       row = document.createElement "tr"
+
       for day in [0 ... 7]
-        if @currentDate.daysInMonth() >= day+1 * week+1
-          cell = document.createElement "td"
-          cell.innerHTML = day+1 * week+1
-          row.appendChild(cell)
+        cell = document.createElement "td"
+        day_of_week = moment("#{@currentDate.year()}-#{@currentDate.month()+1}-#{days[0]}").day()
+        cell.innerHTML = days.shift() if day_of_week == day
+        row.appendChild(cell)
+
       table.appendChild(row)
 
     #
@@ -70,7 +74,7 @@ class Radical
 
     @node.innerHTML = ""
     @node.appendChild(table)
-    @
+    return this
 
 if typeof module != "undefined"
   module.exports = Radical

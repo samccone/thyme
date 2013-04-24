@@ -21,7 +21,8 @@ API
   myCalendar.renderedMonth(); // returns { month: 5, year: 2013 }
 
   // jump and render the containing dates month
-  myCalendar.render(date); // accepts moment.js valid date object
+  myCalenday.currentDate = <date> //must be a valid date object
+  myCalendar.render();
 ```
 
 

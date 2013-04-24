@@ -3,8 +3,8 @@ fs       = require("fs")
 path     = require("path")
 jsdom    = require("jsdom").jsdom
 Radical  = require("../radical")
-global.document = jsdom(fs.readFileSync(path.join(__dirname, 'test.html')))
-global.moment   = require("moment")
+global.document = document = jsdom(fs.readFileSync(path.join(__dirname, 'test.html')))
+global.moment   = moment = require("moment")
 
 beforeEach ->
   global.myCal = new Radical document.getElementById("hold")
@@ -40,4 +40,5 @@ describe 'month traversal', ->
     previous_month.should.equal current_month - 1
 
   it 'should render any month passed', ->
-    myCal.render('2013-7-9').currentDate.month().should.equal 6
+    myCal.currentDate = moment('2013-7-9')
+    myCal.render().currentDate.month().should.equal 6

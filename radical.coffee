@@ -16,7 +16,7 @@ class Radical
     month: @currentDate.month()
     year: @currentDate.year()
 
-  nextMonth: () -> 
+  nextMonth: () ->
     @render(@currentDate.add('months', 1))
 
   prevMonth: () ->
@@ -25,8 +25,23 @@ class Radical
   render: (date) ->
     if date
       @currentDate = if typeof date == 'string' then moment(date) else date
-    @currentDate
-    # render into @node
+
+    table = document.createElement "table"
+    table.setAttribute("border", "1px")
+
+    for i in [0 ... 10]
+      workingRow = document.createElement "tr"
+      for j in [0 ... 5]
+        workingDay = document.createElement "td"
+        workingDay.innerHTML = j
+        workingRow.appendChild workingDay
+      table.appendChild workingRow
+
+    @node.innerHTML = ""
+    @node.appendChild table
+    @
 
 if typeof module != "undefined"
-  module.exports = Radical;
+  module.exports = Radical
+else
+  @Radical = Radical

@@ -1,10 +1,17 @@
-Radical = require("../radical");
-moment  = require("moment");
-assert  = require("assert");
+Radical       = require("../radical");
+assert        = require("assert");
+jsdom         = require("jsdom");
+jsdom         = require("jsdom").jsdom;
+document      = jsdom("<html><head></head><body><div id='hold'></div></body></html>");
+window        = document.createWindow();
+
+beforeEach(function() {
+  myCal = new Radical(document.getElementById("hold"));
+});
 
 describe("creation", function() {
   it("should not bomb if container is passed", function() {
-    new Radical("this is a dom node");
+    new Radical(document.getElementById("hold"));
   });
 
   it("should bomb if container not is passed", function(done) {
@@ -18,8 +25,7 @@ describe("creation", function() {
 
 describe("rendered month", function() {
   it("should return current match current month/year", function() {
-    var tmp = new Radical("this is a dom node");
-    var renderedMonth = tmp.renderedMonth();
+    var renderedMonth = myCal.renderedMonth();
 
     assert.deepEqual(renderedMonth, {
       month: (new Date).getMonth(),
@@ -32,18 +38,15 @@ describe("rendered month", function() {
 describe('month traversal', function(){
 
   it('should return correct next month', function(){
-    var tmp = new Radical("node");
-    assert.equal(tmp.currentDate.month() + 1, tmp.nextMonth().month())
+    assert.equal(myCal.currentDate.month() + 1, myCal.nextMonth().currentDate.month())
   });
 
   it('should return correct previous month', function(){
-    var tmp = new Radical("node");
-    assert.equal(tmp.currentDate.month() - 1, tmp.prevMonth().month())
+    assert.equal(myCal.currentDate.month() - 1, myCal.prevMonth().currentDate.month())
   });
 
   it('should render any month passed', function(){
-    var tmp = new Radical("node");
-    assert.equal(tmp.render('2013-7-9').month(), 6)
+    assert.equal(myCal.render('2013-7-9').currentDate.month(), 6)
   });
 
 });

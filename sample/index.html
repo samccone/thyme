@@ -5,9 +5,17 @@
   </head>
   <body>
     <div id="foo"></div>
+    <a href ='#' class='prev'>previous month</a>
+    <a href='#' class='next'>next month</a>
   </body>
   <script>
     a = new Radical(document.querySelector("#foo"))
-    a.render()
+    var next = document.querySelector(".next");
+    var prev = document.querySelector(".prev");
+    a.render();
+
+    next.addEventListener('click', function(){ a.nextMonth(); });
+    prev.addEventListener('click', function(){ a.prevMonth(); });
+
   </script>
 </html>

@@ -27,14 +27,35 @@ class Radical
   render: ->
     table = document.createElement "table"
 
-    header = document.createElement('th')
-    header.setAttribute 'colspan', "7"
-    header.innerHTML = @currentDate.format("MMMM")
-    table.appendChild(header)
+    #
+    # month header
+    #
+
+    month_header = document.createElement('th')
+    month_header.setAttribute 'colspan', "7"
+    month_header.innerHTML = @currentDate.format("MMMM")
+    row1 = document.createElement('tr')
+    row1.appendChild(month_header)
+    table.appendChild(row1)
+
+    #
+    # day of the week header
+    #
+
+    row2 = document.createElement('tr')
+
+    for dow in ['Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat', 'Sun']
+      dow_header = document.createElement('th')
+      dow_header.innerHTML = dow
+      row2.appendChild(dow_header)
+
+    table.appendChild(row2)
+
+    #
+    # days in the month
+    #
 
     days = [1 ... @currentDate.daysInMonth() + 1]
-
-    console.log @currentDate.format("MMMM")
 
     for week in [0 ... @currentDate.daysInMonth()] by 7
       row = document.createElement "tr"
@@ -46,6 +67,10 @@ class Radical
         row.appendChild(cell)
 
       table.appendChild(row)
+
+    #
+    # build
+    #
 
     @node.innerHTML = ""
     @node.appendChild(table)

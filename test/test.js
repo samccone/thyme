@@ -28,6 +28,7 @@ describe("rendered month", function() {
   });
 });
 
+// months are 0 indexed
 describe('month traversal', function(){
 
   it('should return correct next month', function(){

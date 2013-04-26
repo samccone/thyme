@@ -57,9 +57,7 @@ class Radical
         dayOfWeek = moment("#{@currentDate.year()}-#{@currentDate.month()+1}-#{days[0]}").day()
         cell.innerHTML = days.shift() if dayOfWeek == day
         row.appendChild(cell)
-
       table.appendChild(row)
-
 
     @node.innerHTML = ""
     @node.appendChild(table)

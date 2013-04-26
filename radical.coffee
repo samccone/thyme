@@ -39,7 +39,7 @@ class Radical
   _buildDayOfWeekHeader: ->
     row2 = document.createElement('tr')
 
-    for dow in ['Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat', 'Sun']
+    for dow in ['Sun', 'Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat']
       dowHeader = document.createElement('th')
       dowHeader.innerHTML = dow
       row2.appendChild(dowHeader)

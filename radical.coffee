@@ -8,9 +8,8 @@ class Radical
 
     @render()
 
-  getDay: () ->
-    # loop through current month's days
-    # until we get a text match...?
+  getDay: (day) ->
+    @node.getElementsByTagName("td")[@monthShift() + day - 1]
 
   renderedMonth: () ->
     month: @currentDate.month()
@@ -24,9 +23,8 @@ class Radical
     @currentDate = @currentDate.subtract('months', 1)
     @render()
 
-  initalMonthShift: ->
+  monthShift: ->
     moment("#{@currentDate.year()}-#{@currentDate.month()+1}-1").day()
-
 
   _buildMonthHeader: ->
     monthHeader = document.createElement('th')
@@ -52,7 +50,7 @@ class Radical
 
     days = [1 ... @currentDate.daysInMonth() + 1]
 
-    for week in [1 ... @currentDate.daysInMonth() + @initalMonthShift()+1] by 7
+    for week in [1 ... @currentDate.daysInMonth() + @monthShift()+1] by 7
       row = document.createElement "tr"
       for day in [0 ... 7]
         cell = document.createElement "td"

@@ -42,3 +42,10 @@ describe 'month traversal', ->
   it 'should render any month passed', ->
     myCal.currentDate = moment('2013-7-9')
     myCal.render().currentDate.month().should.equal 6
+
+describe 'getting days', ->
+  it 'should get the first element', ->
+    myCal.getDay(1).innerHTML.should.equal '1'
+
+  it 'should get the last element', ->
+    myCal.getDay(myCal.currentDate.daysInMonth()).innerHTML.should.equal '30'

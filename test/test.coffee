@@ -2,21 +2,21 @@ should   = require("should")
 fs       = require("fs")
 path     = require("path")
 jsdom    = require("jsdom").jsdom
-Radical  = require("../radical")
+Thyme  = require("../thyme")
 global.document = document = jsdom(fs.readFileSync(path.join(__dirname, 'test.html')))
 global.moment   = moment = require("moment")
 
 beforeEach ->
-  global.myCal = new Radical document.getElementById("hold")
+  global.myCal = new Thyme document.getElementById("hold")
 
 describe "creation", ->
 
   it "should not bomb if container is passed", ->
-    new Radical document.getElementById("hold")
+    new Thyme document.getElementById("hold")
 
   it "should bomb if container not is passed", (done) ->
     try
-      new Radical
+      new Thyme
     catch e
       done()
 

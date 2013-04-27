@@ -1,14 +1,14 @@
 {
-  "name": "radical",
+  "name": "thyme",
   "version": "0.0.1",
   "description": "a lightweight, minimal, and present-focused calendar renderer",
-  "main": "radical.js",
+  "main": "thyme.js",
   "directories": {
     "test": "test"
   },
   "scripts": {
     "test": "mocha test --globals myCal -R spec --compilers coffee:coffee-script",
-    "compile": "./node_modules/coffee-script/bin/coffee -c radical.coffee"
+    "compile": "./node_modules/coffee-script/bin/coffee -c thyme.coffee"
   },
   "dependencies": {
     "moment": "2.0.0"
@@ -21,7 +21,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git://github.com/samccone/radical.git"
+    "url": "git://github.com/samccone/thyme.git"
   },
   "author": "",
   "license": "BSD",

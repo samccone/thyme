@@ -1,4 +1,4 @@
-class Radical
+class Thyme
   constructor: (node) ->
     if typeof node == "undefined"
       throw "you must pass a dom node"
@@ -64,6 +64,6 @@ class Radical
     @
 
 if typeof module != "undefined"
-  module.exports = Radical
+  module.exports = Thyme
 else
-  @Radical = Radical
+  @Thyme = Thyme

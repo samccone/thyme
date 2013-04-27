@@ -1,14 +1,14 @@
-# Radical
+# Thyme
 a lightweight, minimal, and present-focused calendar renderer
 
-[![Build Status](https://travis-ci.org/samccone/radical.png)](https://travis-ci.org/samccone/radical)
+[![Build Status](https://travis-ci.org/samccone/thyme.png)](https://travis-ci.org/samccone/thyme)
 
 API
 ---
 
 ```js
   // renders a new calendar initialized at the current month
-  myCalendar = new Radical(document.getElementById('#cal'));
+  myCalendar = new Thyme(document.getElementById('#cal'));
 
   // jump to and render next/prev month
   myCalendar.nextMonth();
